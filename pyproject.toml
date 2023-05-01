@@ -1,14 +1,17 @@
 [tool.poetry]
-name = "mystarter"
+name = "ORA"
 version = "0.1.0"
-description = "my prototyping starter"
+description = "ORA is work directory creater And documentation supporter."
 authors = ["firstVersion"]
 license = "MIT License"
 readme = "README.md"
 
+[tool.poetry.scripts]
+ora = "main:main"
+
 [tool.poetry.dependencies]
 python = "^3.10"
-
+fire = "^0.5.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.3.1"
@@ -23,6 +26,9 @@ pytest-cov = "^4.0.0"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.setuptools]
+package-dir = {"" = "src"}
+
 [tool.pytest.ini_options]
 testpaths = ["tests",]
 filterwarnings = ["ignore::UserWarning",]
@@ -35,7 +41,6 @@ ignore = "E203,W503,W504,"
 line-length = 120
 
 [tool.mypy]
+ignore_missing_imports = true
 
 [tool.isort]
-
-
