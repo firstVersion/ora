@@ -2,7 +2,10 @@
 tests: ## run tests with poetry
 	poetry run isort src
 	poetry run black src
-	poetry run flake8 src
+	poetry run isort tests
+	poetry run black tests
+	poetry run pflake8 tests
+	poetry run pflake8 src
 	poetry run mypy src
 	poetry run python -m pytest
 clean:
